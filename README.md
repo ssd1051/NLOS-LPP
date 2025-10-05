@@ -6,12 +6,13 @@ This is the official codebase of the paper Generalizable-Non-Line-of-Sight-Imagi
 
 #### Synthetic Dataset
 
-We utilized the synthetic data (~3000 motorbike dataset) provided by [LFE](https://github.com/princeton-computational-imaging/NLOSFeatureEmbeddings). \
+We utilized the synthetic data (~3000 motorbike dataset) provided by [LFE](https://github.com/princeton-computational-imaging/NLOSFeatureEmbeddings). 
+
 Please download in [Here](https://drive.google.com/file/d/183VAD_wuVtwkyvfaBoguUHZgHu065BNW/view).
 
 #### Real-world Data
 
-We utilized the real-world data provided by [FK](https://github.com/computational-imaging/nlos-fk) and [NLOST](https://github.com/Depth2World/NLOST). \
+We utilized the real-world data provided by [FK](https://github.com/computational-imaging/nlos-fk) and [NLOST](https://github.com/Depth2World/NLOST).
 
 Besides, the self-captured data will be released soon.
 
@@ -19,7 +20,7 @@ Besides, the self-captured data will be released soon.
 
 1. Download the synthetic dataset.
 2. Modify the data path and result root in `DL_inference/inference/config.py`.
-3. Run `train256.py`.
+3. Run `train_256.py`.
 
 ### Acknowledgements
 
