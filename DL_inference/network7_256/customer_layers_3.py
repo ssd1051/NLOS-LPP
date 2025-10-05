@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 import sys
-sys.path.append('/data1/sdsun/sdsun/code/NLOS_adp_os/DL_inference/utils_pytorch')
+sys.path.append('/data1/sdsun/code/NLOS_adp_os/DL_inference/utils_pytorch')
 from tfmodule import diffmodule as lct
 
 from DL_inference.network7_256.ops import ResConv2D, ResConv3D, Interpsacle2d
@@ -56,7 +56,6 @@ class Transient2volumn(nn.Module):
         
         re = torch.cat([x0_conv, x1], dim=1)
 
-        # 所以他这里只是分了两个分支而已，最后仍然是合并到一起来作为下一步传播，具体为啥要分两个分支不太清楚
         return re
     
 
