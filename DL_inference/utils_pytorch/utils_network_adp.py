@@ -221,8 +221,6 @@ class FrequencyPositionEncoder(nn.Module):
 
 
 class AdaptiveVirtualWave(nn.Module):
-    # Temporal with Frequency network
-    # 减半模块
     def __init__(self, bin_resolution, virtual_wavelength, cycles):
         super(AdaptiveVirtualWave, self).__init__()
 
@@ -302,12 +300,12 @@ class AdaptiveVirtualWave(nn.Module):
         
         window = gaussianwin(
             samples, alpha
-        )  # Assuming gaussianwin is defined elsewhere
+        )
 
         # Calculate the wave convolution parameters
         virtual_cos_wave_k, virtual_sin_wave_k = waveconvparam(
             self.bin_resolution, self.virtual_wavelength, self.cycles, window
-        )  # Assuming waveconvparam is defined elsewhere
+        )
 
         virtual_cos_sin_wave_2xk = torch.stack(
             [virtual_cos_wave_k, virtual_sin_wave_k], dim=0
@@ -317,7 +315,6 @@ class AdaptiveVirtualWave(nn.Module):
 
 
 class AdaptiveVirtualWaveSingle(nn.Module):
-    # Temporal with Frequency network
     def __init__(self, bin_resolution, virtual_wavelength, cycles):
         super(AdaptiveVirtualWaveSingle, self).__init__()
 
@@ -362,7 +359,6 @@ class AdaptiveVirtualWaveSingle(nn.Module):
         # B, D, _, _, _ = x_f.shape
         x_pad = torch.zeros_like(x_f)
         x_pad = x_pad.repeat(1, 1, 2, 2, 2)
-        # PS: here we only use signal's magnitude for input, since the phasor will not provide any useful informations
         B, D, T2, H2, W2 = x_pad.shape
 
         x_pad = torch.fft.fft(x_f, dim=-3, norm="forward")  # ortho norm
@@ -391,12 +387,12 @@ class AdaptiveVirtualWaveSingle(nn.Module):
         
         window = gaussianwin(
             samples, alpha
-        )  # Assuming gaussianwin is defined elsewhere
+        )
 
         # Calculate the wave convolution parameters
         virtual_cos_wave_k, virtual_sin_wave_k = waveconvparam(
             self.bin_resolution, self.virtual_wavelength, self.cycles, window
-        )  # Assuming waveconvparam is defined elsewhere
+        )
 
         virtual_cos_sin_wave_2xk = torch.stack(
             [virtual_cos_wave_k, virtual_sin_wave_k], dim=0

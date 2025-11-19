@@ -9,12 +9,8 @@ import sys
 sys.path.append('/data1/sdsun/sdsun/code/NLOS_adp_os/DL_inference/utils_pytorch')
 from utils import init_mats
 
-from tffk import lct_fk
-from tflct import lct
 from tfphasor_single import phasor
-from tfphasor2 import phasor2
 from cv2 import imshow
-from tffkfast import lct_fk_fast
 
 
 ################################################################
@@ -29,17 +25,8 @@ class diffmodule(nn.Module):
         super(diffmodule, self).__init__()
         
         self.mode = mode
-        if mode == 'fk':
-            self.model = lct_fk(spatial, crop, bin_len, wall_size, align_corners)
         
-        elif mode == 'fkfast':
-            self.model = lct_fk_fast(spatial, crop, bin_len, wall_size, align_corners)
-        
-        elif mode == 'lct' or mode == 'bp':
-            self.model = lct(spatial, crop, bin_len, wall_size, \
-                             method=mode, material=material)
-        
-        elif mode == 'phasor':
+        if mode == 'phasor':
             self.model = phasor(spatial, crop, bin_len, wall_size, \
                                 sampling_coeff, cycles)
         

@@ -8,7 +8,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='deblur')
     
     # dataset
-    parser.add_argument('--datafolder', type=str, default='/data1/yueli/dataset/bike',
+    parser.add_argument('--datafolder', type=str, default='/your/dataset/root',
                         help='dataset folder')
     parser.add_argument('--dataset_name', type=str, default='bike',
                         help='num of  dataset')
@@ -20,7 +20,7 @@ def get_args():
                         help='num of workers')
     parser.add_argument('--svfolder', type=str, default='.',
                         help='save folder')
-    parser.add_argument('--basefolder', type=str, default='/data1/sdsun/sdsun/code/NLOS_adp/results/wwl/0.1',
+    parser.add_argument('--basefolder', type=str, default='results',
                         help='base output folder')
     
     parser.add_argument('--h', type=int, default=64,
@@ -90,6 +90,9 @@ def get_args():
                         help='confocal')
     parser.add_argument('--res0', type=int, default=0,
                         help='do we use res0')
+    parser.add_argument('--exp_name', type=str, default='default',
+                        help='exp_name')
+    
     
     # distributed training setting
     parser.add_argument("--device", type=str, default="cuda")

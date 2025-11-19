@@ -29,7 +29,7 @@ args = get_args()
 import sys
 from DL_inference.network7_256.selfnet import DeepVoxels as Net
 
-from DL_inference.utils.LFEDataset_complicate import LFEDataset
+from DL_inference.utils.LFEDataset_LFE import LFEDataset
 
 
 
