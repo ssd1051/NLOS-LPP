@@ -14,7 +14,7 @@ Please download in [Here](https://drive.google.com/file/d/183VAD_wuVtwkyvfaBoguU
 
 We utilized the real-world data provided by [FK](https://github.com/computational-imaging/nlos-fk) and [NLOST](https://github.com/Depth2World/NLOST).
 
-Besides, the self-captured data will be released soon.
+Besides, the self-captured data can be found at [Here](https://drive.google.com/drive/folders/1DcmH7jZFZgFOA6lACIkks2rQnIxSiIuJ?usp=sharing).
 
 ### Training
 
